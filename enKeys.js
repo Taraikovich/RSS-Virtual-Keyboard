@@ -3,5 +3,5 @@ export const keyboardLayoutEn = {
     Tab: "Tab", KeyQ: "q", KeyW: "w", KeyE: "e", KeyR: "r", KeyT: "t", KeyY: "y", KeyU: "u", KeyI: "i", KeyO: "o", KeyP: "p", BracketLeft: "[", BracketRight: "]", Backslash: "\\", Delete: "DEL",
     CapsLock: "Caps Lock", KeyA: "a", KeyS: "s", KeyD: "d", KeyF: "f", KeyG: "g", KeyH: "h", KeyJ: "j", KeyK: "k", KeyL: "l", Semicolon: ";", Quote: "'", Enter: "ENTER",
     ShiftLeft: "Shift", KeyZ: "z", KeyX: "x", KeyC: "c", KeyV: "v", KeyB: "b", KeyN: "n", KeyM: "m", Comma: ",", Period: ".", Slash: "/", ArrowUp: "▲", ShiftRight: "Shift",
-    ControlLeft: "Ctrl", MetaLeft: "⊞", AltLeft: "Alt", Space: " ", AltRight: "Alt", ControlRight: "Ctrl", ArrowLeft: "◄", ArrowDown: "▼", ArrowRight: "►"
+    ControlLeft: "Ctrl", MetaLeft: "⊞", AltLeft: "Alt", Space: " ", AltRight: "Alt", ArrowLeft: "◄", ArrowDown: "▼", ArrowRight: "►", ControlRight: "Ctrl"
 };

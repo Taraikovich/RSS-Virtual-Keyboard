@@ -7,7 +7,7 @@ const keyboardEn = new Keyboard(keyboardLayoutEn);
 keyboardEn.mount();
 
 const keyboardRu = new Keyboard(keyboardLayoutRu);
-keyboardRu.mount();
+// keyboardRu.mount();
 
 
 
