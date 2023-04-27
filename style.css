@@ -66,6 +66,9 @@ body {
 .keyboard__btn_rctrl {
   width: 55px;
 }
-.keyboard__btn:hover {
+.keyboard__btn_hover {
   box-shadow: none;
+}
+.keyboard__btn_active {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }/*# sourceMappingURL=style.css.map */

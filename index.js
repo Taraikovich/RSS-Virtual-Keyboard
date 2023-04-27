@@ -7,7 +7,14 @@ const keyboardEn = new Keyboard(keyboardLayoutEn);
 keyboardEn.mount();
 
 const keyboardRu = new Keyboard(keyboardLayoutRu);
-// keyboardRu.mount();
+
+document.addEventListener('keydown', (e) => {
+    document.getElementById(e.code).dispatchEvent(new MouseEvent('mousedown'));
+});
+
+document.addEventListener('keyup', (e) => {
+    document.getElementById(e.code).dispatchEvent(new MouseEvent('mouseup'));
+});
 
 
 
