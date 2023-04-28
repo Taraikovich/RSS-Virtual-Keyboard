@@ -1,7 +1,6 @@
-import {keyboardLayoutRu} from '/ruKeys.js';
-import {keyboardLayoutEn} from '/enKeys.js';
-import {Keyboard} from '/keybord.js';
-
+import { keyboardLayoutRu } from './ruKeys.js';
+import keyboardLayoutEn from './enKeys.js';
+import Keyboard from './keybord.js';
 
 const keyboardEn = new Keyboard(keyboardLayoutEn);
 keyboardEn.mount();
@@ -9,17 +8,20 @@ keyboardEn.mount();
 const keyboardRu = new Keyboard(keyboardLayoutRu);
 
 document.addEventListener('keydown', (e) => {
-    document.getElementById(e.code).dispatchEvent(new MouseEvent('mousedown'));
+  e.preventDefault();
+  document.getElementById(e.code).dispatchEvent(new Event('mousedown'));
 });
 
 document.addEventListener('keyup', (e) => {
-    document.getElementById(e.code).dispatchEvent(new MouseEvent('mouseup'));
+  e.preventDefault();
+  document.getElementById(e.code).dispatchEvent(new Event('mouseup'));
 });
 
-
-
-
-
+// document.addEventListener('keydown', function(event) {
+//   if (event.keyCode === 9) {
+//     event.preventDefault();
+//   }
+// });
 
 
 

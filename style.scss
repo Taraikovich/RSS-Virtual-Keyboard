@@ -35,7 +35,13 @@ body {
         font-size: 1em;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         transition: all .5s ease;
-        //box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        &_hover {
+            box-shadow: none;
+        }
+        &_active {
+            animation: none;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        }
         &_text {
             background-color: #F9D949;
             color: #3C486B;
@@ -65,11 +71,18 @@ body {
         &_rctrl{
             width: 55px;
         }
+
     }
-    &__btn_hover {
-        box-shadow: none;
-    }
-    &__btn_active {
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-    }
+    
 }
+
+@keyframes shadow {
+    from {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+    }
+    to {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    }
+  }
