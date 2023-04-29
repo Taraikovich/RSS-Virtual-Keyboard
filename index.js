@@ -1,11 +1,12 @@
-import { keyboardLayoutRu } from './ruKeys.js';
+import keyboardLayoutRu from './ruKeys.js';
 import keyboardLayoutEn from './enKeys.js';
 import Keyboard from './keybord.js';
 
-const keyboardEn = new Keyboard(keyboardLayoutEn);
-keyboardEn.mount();
 
-const keyboardRu = new Keyboard(keyboardLayoutRu);
+
+let lang = keyboardLayoutEn;
+const keyboardEn = new Keyboard(lang);
+keyboardEn.mount();
 
 document.addEventListener('keydown', (e) => {
   e.preventDefault();
@@ -17,11 +18,16 @@ document.addEventListener('keyup', (e) => {
   document.getElementById(e.code).dispatchEvent(new Event('mouseup'));
 });
 
-// document.addEventListener('keydown', function(event) {
-//   if (event.keyCode === 9) {
-//     event.preventDefault();
-//   }
-// });
+document.addEventListener('keydown', (e) => {
+  if (e.code === 'AltLeft' && e.ctrlKey === true) {
+    if (keyboardEn.layout === keyboardLayoutEn) {
+      keyboardEn.switchLang(keyboardLayoutRu);
+      keyboardEn.layout = keyboardLayoutRu;
+    } else if (keyboardEn.layout === keyboardLayoutRu) {
+      keyboardEn.switchLang(keyboardLayoutEn);
+      keyboardEn.layout = keyboardLayoutEn;
+    }
+  }
+});
 
-
-
+// keyboardEn.shift()

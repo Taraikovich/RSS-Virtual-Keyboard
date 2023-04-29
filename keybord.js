@@ -37,8 +37,11 @@ export default class Keyboard {
       if (key === 'Tab') this.button.classList.add('keyboard__btn_tab');
       if (key === 'CapsLock') this.button.classList.add('keyboard__btn_caps');
       if (key === 'Enter') this.button.classList.add('keyboard__btn_enter');
-      if (key === 'ShiftLeft')
+      if (key === 'ShiftLeft') {
         this.button.classList.add('keyboard__btn_lshift');
+        this.button.addEventListener('mousedown', this.shift.bind(this));
+        this.button.addEventListener('mouseup', this.shift.bind(this));
+      }
       if (key === 'ShiftRight')
         this.button.classList.add('keyboard__btn_rshift');
       if (key === 'Space') this.button.classList.add('keyboard__btn_space');
@@ -58,6 +61,71 @@ export default class Keyboard {
     this.guid.innerText =
       'The keyboard was created in the Windows operating system\nTo switch the language combination: left ctrl + alt';
     this.container.appendChild(this.guid);
+  }
+
+  test() {}
+
+  switchLang(lang) {
+    Object.keys(lang).forEach((key) => {
+      document.getElementById(key).textContent = lang[key];
+    });
+  }
+
+  //   switchLang(lang) {
+  //     Object.keys(lang).forEach((key) => {
+  //       document.getElementById(key).textContent = lang[key];
+  //     });
+  //   }
+
+  shift() {
+    this.shiftSt = !this.shiftSt;
+    this.shiftKeys = Object.assign({}, this.layout);
+    this.enShift = {
+      '`': '~~',
+      1: '!!',
+      2: '@"', // "
+      3: '#№', // №
+      4: '$;', // ;
+      5: '%%',
+      6: '^:', // :
+      7: '&?', // ?
+      8: '**',
+      9: '((',
+      0: '))',
+      '-': '__',
+      '=': '++',
+      '[': '{{',
+      ']': '}}',
+      ';': '::',
+      "'": '""',
+      ',': '<,',
+      '.': '>,',
+      '/': '?,', // ,
+      '\\': '|/', // /  
+    };
+    Object.keys(this.shiftKeys).forEach((key) => {
+      if (this.shiftKeys[key].length === 1)
+        this.shiftKeys[key] = this.shiftKeys[key].toUpperCase();
+      if (this.shiftKeys[key] in this.enShift) {
+        if (this.layout.Backquote === 'ё') {
+          this.shiftKeys[key] = this.enShift[this.shiftKeys[key]][1];
+          this.shiftKeys.Backslash = '/';
+        } else {
+          this.shiftKeys[key] = this.enShift[this.shiftKeys[key]][0];
+        }
+      }
+      if (this.shiftKeys[key] in this.enShift && this.layout.Backquote === 'ё')
+        this.shiftKeys[key] = this.enShift[this.shiftKeys[key]][1];
+    });
+    if (this.shiftSt) {
+      Object.keys(this.shiftKeys).forEach((key) => {
+        document.getElementById(key).textContent = this.shiftKeys[key];
+      });
+    } else {
+      Object.keys(this.layout).forEach((key) => {
+        document.getElementById(key).textContent = this.layout[key];
+      });
+    }
   }
 
   mount() {
@@ -139,6 +207,11 @@ export default class Keyboard {
       teaxArea.selectionStart = position;
       teaxArea.selectionEnd = position;
     }
+
+    // if (this.id === 'ShiftLeft' || this.id === 'ShiftRight') {
+    //     this.shift;
+    //     console.log(this.shift);
+    // }
   }
 
   activeRemove() {

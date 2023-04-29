@@ -1,4 +1,4 @@
-export const keyboardLayoutRu = {
+const keyboardLayoutRu = {
   Backquote: 'ё',
   Digit1: '1',
   Digit2: '2',
@@ -52,7 +52,7 @@ export const keyboardLayoutRu = {
   Comma: 'б',
   Period: 'ю',
   Slash: '.',
-  Slash: '/',
+//   Slash: '/',
   ArrowUp: '▲',
   ShiftRight: 'Shift',
   ControlLeft: 'Ctrl',
@@ -65,3 +65,5 @@ export const keyboardLayoutRu = {
   ArrowRight: '►',
   ControlRight: 'Ctrl',
 };
+
+export default keyboardLayoutRu;
