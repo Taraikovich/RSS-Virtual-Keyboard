@@ -55,7 +55,7 @@ const keyboardLayoutEn = {
   ArrowUp: '▲',
   ShiftRight: 'Shift',
   ControlLeft: 'Ctrl',
-  MetaLeft: '⊞',
+  MetaLeft: ' ⊞ ',
   AltLeft: 'Alt',
   Space: ' ',
   AltRight: 'Alt',

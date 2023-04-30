@@ -58,6 +58,9 @@ body {
 .keyboard__btn_caps {
   width: 80px;
 }
+.keyboard__btn_caps-on {
+  color: #F9D949;
+}
 .keyboard__btn_enter {
   width: 125px;
 }
