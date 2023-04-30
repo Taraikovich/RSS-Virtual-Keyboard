@@ -1,0 +1,91 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 800px;
+    &__h1 {
+        color: #3C486B;
+    }
+    &__input {
+        resize: none;
+        width: 720px;
+        height: 200px;
+        border-radius: 5px;
+        margin: 30px 0;
+        padding: 20px;
+        border: 2px solid #3C486B;
+        background-color: #F0F0F0;
+        // box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    }
+    &__btn {
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        background-color: #F45050;
+        color: #F0F0F0;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        transition: all .5s ease;
+        &_hover {
+            box-shadow: none;
+        }
+        &_active {
+            animation: none;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        }
+        &_text {
+            background-color: #F9D949;
+            color: #3C486B;
+            font-weight: bold;
+        }
+        &_backspace {
+            width: 115px;
+        }
+        &_tab {
+            width: 65px;
+        }
+        &_caps {
+            width: 80px;
+        }
+        &_caps-on {
+            color: #F9D949
+        }
+        &_enter {
+            width: 125px;
+        }
+        &_lshift {
+            width: 100px;
+        }
+        &_rshift {
+            width: 105px;
+        }
+        &_space {
+            width: 350px;
+        }
+        &_rctrl{
+            width: 55px;
+        }
+
+    }
+    
+}
+
+@keyframes shadow {
+    from {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+    }
+    to {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    }
+  }
